@@ -1,53 +1,120 @@
 <html>
 <head>
-	<meta charset="UTF-8">
 	<title></title>
+	<meta charset="utf-8">
+	<script>
+		window.onload = function(){
+			var outer = document.getElementById('outer');
+			outer.style.left = (window.innerWidth/2 - 360)+'px';
+			outer.style.top = (window.innerHeight/2 - 230)+'px';
+
+			var header = document.getElementById('header');
+			header.style.paddingLeft = (window.innerWidth/2 - 500)+'px';
+		};
+	</script>
 	<style type="text/css">
 		body{
-			height:100%;
-			width:100%;
-			margin:0px;
-			padding:0px;
+			margin : 0px;
+			padding : 0px;
 		}
-		article div{
-			position: absolute;
+		#header{
+			cursor:default;
+			height:45px;
+			background-color:rgba(58,58,58,0.8);
 		}
-		article div:nth-child(1){
-		}
-		article div:nth-child(1){
-		}
-		article div:nth-child(1){
-		}
-		article div:nth-child(1){
-		}
-		footer{
-			height:30%; width:100%;
-			margin:0%; padding:0%;
-			position: absolute;
-			bottom:0px;
-		}
-		footer div{
-			background-color:blue;
-			height:100%; width:25%;
-			display:inline-block;
+		.nav{
+			cursor:pointer;
+			line-height:45px;
 			text-align:center;
-			margin:0%;
-			padding:0%;
+			display:inline-block;
+			width : 140px;
+			color:white;
+		}
+
+		.nav:hover{
+			color:#bbbbbb;
+		}
+		#outer{
+			height : 520px;
+			width : 720px;
+			position:absolute;
+		}
+		#outer div{
+			 box-shadow: 2px 2px 4px black;
+			border-radius : 5px;
+			position:absolute;
+			display:inline-block;
+			background-color : #7D0E1B;
+		}
+		.introduce{
+			width: 350px; height: 250px;
+			left:0px; top:0px;
+		}
+		.record{
+			width: 170px; height: 120px;
+			left: 370px; top: 0px;
+		}
+		#video{
+			width: 170px; height: 120px;
+			left: 370px; top: 130px;
+		}
+		#photo{
+			width: 350px; height: 120px;
+			left: 370px; top: 270px;
+		}
+		#calander{
+			width: 170px; height: 250px;
+			left: 550px; top: 0px;
+		}
+		.player{
+			width: 170px; height: 120px;
+		}
+		#best1{
+			left: 0px; top: 270px;
+		}
+		#best2{
+			left: 180px; top: 270px;
+		}
+		#best3{
+			left: 0px; top: 400px;
+		}
+		#best4{
+			left: 180px; top: 400px;
+		}
+		#best5{
+			left: 370px; top: 400px;
+		}
+		.help{
+			width: 170px; height: 120px;
+			left: 550px; top: 400px;
 		}
 	</style>
 </head>
-<body>
-	<article>
-		<div>고려대학교 농구부</div
-		><div></div
-		><div>ON AIR</div
-		><div>일정</div>
-	</article>
-	<footer>
-		<div>개발자 소개</div
-		><div>팀/선수 소개</div
-		><div>기록실</div
-		><div>갤러리</div>
-	</footer>
+<body style="background-image:url('MainBackground.png'); background-size:cover;">
+	<div id="header">
+		<font size="2px">
+		<a href="MainPage.html"><div class="nav" id="logo">로고</div></a>
+		<a href="TeamPage.html"><div class="nav" id="introduce">팀 소개</div></a>
+		<a href="PlayerPage.html"><div class="nav" id="player">선수단</div></a>
+		<a href="CalendarPage.html"><div class="nav" id="gallery">일정/결과</div></a>
+		<a href="GalleryPage.html"><div class="nav" id="event">갤러리</div></a>
+		<a href="RecordPage.html"><div class="nav" id="record">기록실</div></a>
+		<a href="DeveloperPage.html"><div class="nav" id="developer">도움말</div></a>
+		</font>
+	</div>
+
+	<div id="outer">
+	<div class="introduce"></div>
+	<div class="record"></div>
+	<div class="gallery" id="video"></div>
+	<div class="record" id="calander"></div>
+	<div class="player" id="best1"></div>
+	<div class="player" id="best2"></div>
+	<div class="gallery" id="photo"></div>
+	<div class="player" id="best3"></div>
+	<div class="player" id="best4"></div>
+	<div class="player" id="best5"></div>
+	<div class="help"></div>
+	</div>
 </body>
 </html>

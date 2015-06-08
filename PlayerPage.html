@@ -1,0 +1,265 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script>
+		window.onload = function(){
+			var outer = document.getElementById('outer');
+			outer.style.left = (window.innerWidth/2 - 360)+'px';
+			outer.style.top = (window.innerHeight/2 - 175)+'px';
+
+			var header = document.getElementById('header');
+			header.style.paddingLeft = (window.innerWidth/2 - 500)+'px';
+
+			var title = document.getElementById('title');
+			title.style.left=(window.innerWidth/2-400)+'px';
+			title.style.top = (window.innerHeight/2 - 250)+'px';
+		};
+	</script>
+	<style type="text/css">
+		body{
+			margin : 0px;
+			padding : 0px;
+		}
+		#header{
+			cursor: default;
+			height:45px;
+			background-color:rgba(58,58,58,0.8);
+		}
+		.nav{
+			cursor: pointer;
+			line-height:45px;
+			text-align:center;
+			display:inline-block;
+			width : 140px;
+			color:white;
+		}
+		.nav:hover{
+			color:#aaaaaa;
+		}
+		#title{
+			position:absolute;
+			height:50px;
+			width:800px;
+			border-bottom: 2px solid #7D0E1B;
+		}
+		#outer{
+			overflow-x:scroll;
+			height : 470px;
+			width : 720px;
+			position:absolute;
+		}
+
+		#outer div{
+			box-shadow: 2px 2px 4px black;
+			color:white;
+			font-size: 3px;
+			text-shadow: 0px 0px 10px black;
+		}
+		#outer div table{
+			position:absolute;
+			bottom:10px;
+		}
+		#outer div table td{
+			text-align: left;
+			font-size:5px;
+			color:white;
+			text-shadow: 0px 0px 10px black;
+		}
+		#outer div table th{
+			text-align: center;
+			font-size:5px;
+			color:white;
+			text-shadow: 0px 0px 20px black;
+		}
+		.profile{
+			position:absolute;
+			border-radius:5px;
+			width:142px;
+			height:222px;
+			background-size:contain;
+			display:inline-block;
+			background-color : #bbbbbb;
+		}
+		.status{
+			padding:10px;
+			position:absolute;
+			border-radius:5px;
+			width:122px;
+			height:202px;
+			display:none;
+			background-color:rgba(125,14,27,0.85);
+		}
+		.profile:hover + .status{
+			display:inline-block;
+		}
+	</style>
+</head>
+<body style="background-image:url('MainBackground.png'); background-size:cover; background-repeat:no-repeat; background-color:#222222">
+	<div id="header">
+		<font size="2px">
+		<a href="MainPage.html"><div class="nav" id="logo">로고</div></a>
+		<a href="TeamPage.html"><div class="nav" id="introduce">팀 소개</div></a>
+		<a href="PlayerPage.html"><div class="nav" id="player">선수단</div></a>
+		<a href="CalendarPage.html"><div class="nav" id="gallery">일정/결과</div></a>
+		<a href="GalleryPage.html"><div class="nav" id="event">갤러리</div></a>
+		<a href="RecordPage.html"><div class="nav" id="record">기록실</div></a>
+		<a href="DeveloperPage.html"><div class="nav" id="developer">도움말</div></a>
+		</font>
+	</div>
+	<div id="title">
+		<font id="font" size="6px" style="position:absolute; bottom:10px; color:white;">&nbsp;&nbsp;&nbsp;<i style="text-shadow: 2px 2px 4px #7D0E1B">선수단 소개</i></font>
+	</div>
+	<div id="outer">
+		<div class="profile" style="left:0; top:0; background-image:url('이민형.jpg');"></div>
+		<div class="status" style="left:0; top:0;">
+				<br/><br/><br/><br/><br/><br/>이민형 감독<br/><br/>
+				안녕하세요. 고려대학교 농구부 감독 이민형입니다. 고려대 농구부는 아마 최강의 자리에 올랐습니다. 목표는 전승입니다. 그 누구에게도 승리를 내주지 않을 자신이 있습니다. 공,수에서 완벽한 안암 호랑이들의 모습을 보여 드릴 것을 약속드립니다.
+		</div>
+		<div class="profile" style="left:160; top:0; background-image:url('이승현.jpg');"></div>
+		<div class="status" style="left:160; top:0;">
+			<table>
+				<tr><td>이름</td><th>이승현</th></tr>
+				<tr><td>포지션</td><th>C</th></tr>
+				<tr><td>백넘버</td><th>33번</th></tr>
+				<tr><td>학년</td><th>4학년</th></tr>
+				<tr><td>키</td><th>201cm</th></tr>
+				<tr><td>몸무게</td><th>88kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:320; top:0; background-image:url('김지후.jpg');"></div>
+		<div class="status" style="left:320; top:0;">
+			<table>
+				<tr><td>이름</td><th>김지후</th></tr>
+				<tr><td>포지션</td><th>G</th></tr>
+				<tr><td>백넘버</td><th>8번</th></tr>
+				<tr><td>학년</td><th>4학년</th></tr>
+				<tr><td>키</td><th>189cm</th></tr>
+				<tr><td>몸무게</td><th>73kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:480; top:0; background-image:url('이동엽.jpg');"></div>
+		<div class="status" style="left:480; top:0;">
+			<table>
+				<tr><td>이름</td><th>이동엽</th></tr>
+				<tr><td>포지션</td><th>G</th></tr>
+				<tr><td>백넘버</td><th>17번</th></tr>
+				<tr><td>학년</td><th>3학년</th></tr>
+				<tr><td>키</td><th>192cm</th></tr>
+				<tr><td>몸무게</td><th>83kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:640; top:0; background-image:url('문성곤.jpg');"></div>
+		<div class="status" style="left:640; top:0;">
+			<table>
+				<tr><td>이름</td><th>문성곤</th></tr>
+				<tr><td>포지션</td><th>F</th></tr>
+				<tr><td>백넘버</td><th>10번</th></tr>
+				<tr><td>학년</td><th>3학년</th></tr>
+				<tr><td>키</td><th>195cm</th></tr>
+				<tr><td>몸무게</td><th>85kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:800; top:0; background-image:url('이호영.jpg');"></div>
+		<div class="status" style="left:800; top:0;">
+			<table>
+				<tr><td>이름</td><th>이호영</th></tr>
+				<tr><td>포지션</td><th>C</th></tr>
+				<tr><td>백넘버</td><th>14번</th></tr>
+				<tr><td>학년</td><th>3학년</th></tr>
+				<tr><td>키</td><th>200cm</th></tr>
+				<tr><td>몸무게</td><th>95kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:960; top:0; background-image:url('정희원.jpg');"></div>
+		<div class="status" style="left:960; top:0;">
+			<table>
+				<tr><td>이름</td><th>정희원</th></tr>
+				<tr><td>포지션</td><th>F</th></tr>
+				<tr><td>백넘버</td><th>24번</th></tr>
+				<tr><td>학년</td><th>2학년</th></tr>
+				<tr><td>키</td><th>193cm</th></tr>
+				<tr><td>몸무게</td><th>85kg</th></tr>
+			</table>
+		</div>
+
+		<div class="profile" style="left:0; top:240; background-image:url('이종현.jpg');"></div>
+		<div class="status" style="left:0; top:240;">
+			<table>
+				<tr><td>이름</td><th>이종현</th></tr>
+				<tr><td>포지션</td><th>C</th></tr>
+				<tr><td>백넘버</td><th>32번</th></tr>
+				<tr><td>학년</td><th>2학년</th></tr>
+				<tr><td>키</td><th>206cm</th></tr>
+				<tr><td>몸무게</td><th>107kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:160; top:240; background-image:url('강상재.jpg');"></div>
+		<div class="status" style="left:160; top:240;">
+			<table>
+				<tr><td>이름</td><th>강상재</th></tr>
+				<tr><td>포지션</td><th>F</th></tr>
+				<tr><td>백넘버</td><th>13번</th></tr>
+				<tr><td>학년</td><th>2학년</th></tr>
+				<tr><td>키</td><th>202cm</th></tr>
+				<tr><td>몸무게</td><th>93kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:320; top:240; background-image:url('최성모.jpg');"></div>
+		<div class="status" style="left:320; top:240;">
+			<table>
+				<tr><td>이름</td><th>최성모</th></tr>
+				<tr><td>포지션</td><th>G</th></tr>
+				<tr><td>백넘버</td><th>20번</th></tr>
+				<tr><td>학년</td><th>2학년</th></tr>
+				<tr><td>키</td><th>188cm</th></tr>
+				<tr><td>몸무게</td><th>78kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:480; top:240; background-image:url('김윤.jpg');"></div>
+		<div class="status" style="left:480; top:240;">
+			<table>
+				<tr><td>이름</td><th>김윤</th></tr>
+				<tr><td>포지션</td><th>G</th></tr>
+				<tr><td>백넘버</td><th>12번</th></tr>
+				<tr><td>학년</td><th>1학년</th></tr>
+				<tr><td>키</td><th>187cm</th></tr>
+				<tr><td>몸무게</td><th>80kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:640; top:240; background-image:url('김한준.jpg');"></div>
+		<div class="status" style="left:640; top:240;">
+			<table>
+				<tr><td>이름</td><th>김한준</th></tr>
+				<tr><td>포지션</td><th>F</th></tr>
+				<tr><td>백넘버</td><th>23번</th></tr>
+				<tr><td>학년</td><th>1학년</th></tr>
+				<tr><td>키</td><th>189cm</th></tr>
+				<tr><td>몸무게</td><th>89kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:800; top:240; background-image:url('김낙현.jpg');"></div>
+		<div class="status" style="left:800; top:240;">
+			<table>
+				<tr><td>이름</td><th>김낙현</th></tr>
+				<tr><td>포지션</td><th>G</th></tr>
+				<tr><td>백넘버</td><th>4번</th></tr>
+				<tr><td>학년</td><th>1학년</th></tr>
+				<tr><td>키</td><th>184cm</th></tr>
+				<tr><td>몸무게</td><th>84kg</th></tr>
+			</table>
+		</div>
+		<div class="profile" style="left:960; top:240; background-image:url('최성원.jpg');"></div>
+		<div class="status" style="left:960; top:240;">
+			<table>
+				<tr><td>이름</td><th>최성원</th></tr>
+				<tr><td>포지션</td><th>G</th></tr>
+				<tr><td>백넘버</td><th>5번</th></tr>
+				<tr><td>학년</td><th>1학년</th></tr>
+				<tr><td>키</td><th>184cm</th></tr>
+				<tr><td>몸무게</td><th>75kg</th></tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
