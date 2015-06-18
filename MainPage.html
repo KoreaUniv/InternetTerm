@@ -9,7 +9,7 @@
 			outer.style.top = (window.innerHeight/2 - 230)+'px';
 
 			var header = document.getElementById('header');
-			header.style.paddingLeft = (window.innerWidth/2 - 500)+'px';
+			header.style.paddingLeft = (window.innerWidth/2 - 440)+'px';
 		};
 	</script>
 	<style type="text/css">
@@ -19,15 +19,15 @@
 		}
 		#header{
 			cursor:default;
-			height:45px;
+			height:40px;
 			background-color:rgba(58,58,58,0.8);
 		}
 		.nav{
 			cursor:pointer;
-			line-height:45px;
 			text-align:center;
 			display:inline-block;
-			width : 140px;
+			width : 120px;
+			height : 40px;
 			color:white;
 		}
 
@@ -40,11 +40,16 @@
 			position:absolute;
 		}
 		#outer div{
-			 box-shadow: 2px 2px 4px black;
-			border-radius : 5px;
+			box-shadow: 2px 2px 4px black;
 			position:absolute;
 			display:inline-block;
 			background-color : #7D0E1B;
+		}
+		#outer h1{
+			color : white;
+			font-size:40px;
+			padding:20px;
+			margin:0px;
 		}
 		.introduce{
 			width: 350px; height: 250px;
@@ -92,29 +97,40 @@
 </head>
 <body style="background-image:url('MainBackground.png'); background-size:cover;">
 	<div id="header">
-		<font size="2px">
-		<a href="MainPage.html"><div class="nav" id="logo">로고</div></a>
+		<font size="2px" style="line-height:40px;">
+		<a href="MainPage.html"><div class="nav" id="logo" style="background-image:url('KoreaUniv.gif'); background-size:contain; background-repeat:no-repeat; background-position:center;"> &nbsp;</div></a>
 		<a href="TeamPage.html"><div class="nav" id="introduce">팀 소개</div></a>
 		<a href="PlayerPage.html"><div class="nav" id="player">선수단</div></a>
 		<a href="CalendarPage.html"><div class="nav" id="gallery">일정/결과</div></a>
 		<a href="GalleryPage.html"><div class="nav" id="event">갤러리</div></a>
 		<a href="RecordPage.html"><div class="nav" id="record">기록실</div></a>
 		<a href="DeveloperPage.html"><div class="nav" id="developer">도움말</div></a>
-		</font>
 	</div>
 
 	<div id="outer">
-	<div class="introduce"></div>
-	<div class="record"></div>
-	<div class="gallery" id="video"></div>
-	<div class="record" id="calander"></div>
-	<div class="player" id="best1"></div>
-	<div class="player" id="best2"></div>
-	<div class="gallery" id="photo"></div>
-	<div class="player" id="best3"></div>
-	<div class="player" id="best4"></div>
-	<div class="player" id="best5"></div>
-	<div class="help"></div>
+	<a href="TeamPage.html"><div class="introduce" style="background-image:url('introduce.png'); background-size:cover;">
+		<h1 style="padding:20px 20px 0px 20px; margin:0px;">고려대학교 농구부</h1>
+		<h4 style="padding:20px; margin:0px; color:white;">고려대학교 농구부는 고려대학교에서 운영하는 운동부 중 하나이다. 연세대학교 농구부와 함께 1990년대 대한민국 농구의 인기를 이끌었다.<br/><br/>우리는 고대 나가자 싸우자 이기자 헤이! 고대 야!</h4>
+	</div>
+	</a>
+	<div class="record">
+		<iframe width="170" height="120" frameborder="0"; src="http://vod.kusf.or.kr/gvod/2015_bb/game_20150528_%ED%95%9C%EC%96%91%EB%8C%80_%EA%B3%A0%EB%A0%A4%EB%8C%80.mp4" autostart="ture" allowfullscreen></iframe>
+	</div>
+	<div class="gallery" id="video"style="background-color:white; text-align:center; line-height:120px;">
+		<b style="color:#cccccc; font-size:40px;">ON-AIR</b>
+	</div>
+	<a href="CalendarPage.html"><div class="record" id="calander" style="background-image:url('calendar.png'); background-size:cover;">
+		<h1 style="padding:20px 20px 0px 20px; margin:0px;">일정</h1>
+		<h4  style="padding:20px; margin:0px; color:white;">고려대학교 농구부의 대학농구리그 경기 일정을 확인하실 수 있습니다.</h4>
+	</div>
+	</a>
+	<div class="player" id="best1" style="background-image:url('pl1.jpg'); background-size:cover;"></div>
+	<div class="player" id="best2" style="background-image:url('pl2.jpg'); background-size:cover;"></div>
+	<div class="gallery" id="photo" style="background-image:url('img5.jpg'); background-size:cover;"></div>
+	<div class="player" id="best3" style="background-image:url('pl3.jpg'); background-size:cover;"></div>
+	<div class="player" id="best4" style="background-image:url('pl4.jpg'); background-size:cover;"></div>
+	<div class="player" id="best5" style="background-image:url('pl5.jpg'); background-size:cover;"></div>
+	<div class="help" style="background-image:url('developer.png'); background-size:cover;"></div>
 	</div>
 </body>
 </html>

@@ -1,0 +1,249 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+	</script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var outer = document.getElementById('outer');
+			outer.style.left = (window.innerWidth/2 - 360)+'px';
+			outer.style.top = (window.innerHeight/2 - 230)+'px';
+
+			var profile = document.getElementById('profile');
+			profile.style.left = (window.innerWidth/2 - 150)+'px';
+			profile.style.top = (window.innerHeight/2 - 150)+'px';
+
+			var header = document.getElementById('header');
+			header.style.paddingLeft = (window.innerWidth/2 - 440)+'px';
+
+			var profileCover = document.getElementById('cover');
+			profileCover.style.left = (window.innerWidth/2 - 150)+'px';
+			profileCover.style.top = (window.innerHeight/2 - 150)+'px';
+		};
+		function profileClick(){
+			var console = document.getElementById('outer');
+			console.style.visibility = 'visible';
+		}
+		function profileOut(){
+			var profileCover = document.getElementById('cover');
+			profileCover.style.backgroundColor='rgba(256,256,256,0)';
+			profileCover.style.color='rgba(00,00,00,0)';
+		}
+
+		function profileHover(){
+			var profileCover = document.getElementById('cover');
+			profileCover.style.backgroundColor='rgba(256,256,256,0.6)';
+			profileCover.style.color='rgba(00,00,00,0.6)';
+		}
+		function consoleHover(){
+			var consoles = document.getElementsByClassName('console');
+			consoles[0].innerHTML = 'x';
+			consoles[1].innerHTML = '-';
+			consoles[2].innerHTML = '+';
+		}
+
+		function consoleOut(){
+			var consoles = document.getElementsByClassName('console');
+			consoles[0].innerHTML = '';
+			consoles[1].innerHTML = '';
+			consoles[2].innerHTML = '';
+		}
+
+		function consoleClick(){
+			var console = document.getElementById('outer');
+			console.style.visibility = 'hidden';
+		}
+	</script>
+	<style type="text/css">
+		body{
+			margin : 0px;
+			padding : 0px;
+		}
+		#header{
+			cursor:default;
+			height:40px;
+			background-color:rgba(58,58,58,0.8);
+		}
+		.nav{
+			cursor:pointer;
+			line-height:40px;
+			text-align:center;
+			display:inline-block;
+			width : 120px;
+			color:white;
+		}
+
+		.nav:hover{
+			color:#bbbbbb;
+		}
+		#outer{
+			border-radius:5px;
+			height : 505px;
+			width : 720px;
+			overflow: hidden;
+			position:absolute;
+			top:60px;
+			box-shadow: 10px 10px 50px black;
+		}
+
+		.console{
+			text-align: center;
+			line-height: 20px;
+			display: inline-block;
+			height:20px;
+			width:20px;
+			margin-left:5px;
+			margin-top:5px;
+			margin-bottom:5px;
+			border-radius: 100%;
+			cursor: pointer;
+		}
+		.titlebar{
+			border-radius: 5px 5px 0px 0px;
+			height:30px;
+			background-color:gray;
+		}
+		#title{
+			padding-left:100px;
+			display:inline-block;
+			color:black;
+			height:30px;
+			position:absolute;
+			line-height:30px;
+		}
+		tag{
+			color:white;
+		}
+		tagName{
+			color:red;
+		}
+		.content{
+			padding:20px 20px 10px 20px;
+			background-color: black;
+			width:640px;
+			height:475px;
+			display:inline-block;
+			margin:0px;
+			position:absolute;
+			left:40px;
+		}
+		.line{
+			padding-top:20px;
+			position:absolute;
+			background-color:black;
+			width:40px;
+			text-align:right;
+			height:475px;
+			color:gray;
+			display:inline-block;
+		}
+		txt{
+			color:white;
+		}
+		attrName{
+			color:lawngreen;
+		}
+		attr{
+			color:yellow;
+		}
+
+		#profile{
+			position:absolute;
+			cursor:pointer;
+		}
+
+		#cover{
+			position:absolute;
+			cursor:pointer;
+			background-color:rgba(256,256,256,0);
+			color:rgba(0,0,0,0);
+			line-height:300px;
+			text-align:center;
+			font-size:30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="profile" style=" width:300px; height:300px; border-radius:100%; background-image:url('JahyunProfile.jpeg'); background-size:cover;"></div>
+	<div id="cover" style=" width:300px; height:300px; border-radius:100%;" onmouseover="profileHover()" onMouseout="profileOut()" onClick="profileClick()">
+		Welcome, Jahyun Kim
+	</div>
+	</div>
+	<div id="header">
+		<font size="2px" style="line-height:40px;">
+		<a href="MainPage.html"><div class="nav" id="logo" style="background-image:url('KoreaUniv.gif'); background-size:contain; background-repeat:no-repeat; background-position:center;"> &nbsp;</div></a>
+		<a href="TeamPage.html"><div class="nav" id="introduce">팀 소개</div></a>
+		<a href="PlayerPage.html"><div class="nav" id="player">선수단</div></a>
+		<a href="CalendarPage.html"><div class="nav" id="gallery">일정/결과</div></a>
+		<a href="GalleryPage.html"><div class="nav" id="event">갤러리</div></a>
+		<a href="RecordPage.html"><div class="nav" id="record">기록실</div></a>
+		<a href="DeveloperPage.html"><div class="nav" id="developer">도움말</div></a>
+		</font>
+	</div>
+	<div id="outer">
+		<div class="titlebar">
+			<div class="console" id="close" style="background-color:red;" onmouseover="consoleHover()" onMouseout="consoleOut()" onClick="consoleClick()"></div>
+			<div class="console" id="minimize" style="color:gray; background-color:orange;" onmouseover="consoleHover()" onMouseout="consoleOut()"></div>
+			<div class="console" id="maximize" style="color:gray; background-color:green;" onmouseover="consoleHover()" onMouseout="consoleOut()"></div>
+			<div id="title">2014210015 김자현 - 인터넷 활용 및 실습 텀 프로젝트.html</div>
+		</div>
+		<div class="line">
+			1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23
+		</div><div class="content">
+			<txt>&lt;!DOCTYPE HTML&gt;</txt><br/><br/>
+			<tag>&lt;</tag><tagName>html</tagName><tag>&gt;</tag><br/>
+			<tag>&lt;</tag><tagName>head</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>title</tagName><tag>&gt;</tag>
+			<txt>자기소개 페이지</txt>
+			<tag>&lt;</tag><tagName>html</tagName><tag>&gt;</tag><br/>
+			<tag>&lt;</tag><txt>/</txt><tagName>head</tagName><tag>&gt;</tag><br/>
+			<tag>&lt;</tag><tagName>body</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>div </tagName><attrName>id</attrName><txt>=</txt><attr>"overview"</attr><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>name</tagName><tag>&gt;</tag>
+			<txt>김자현</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>name</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>number</tagName><tag>&gt;</tag>
+			<txt>2014210015</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>number</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>major</tagName><tag>&gt;</tag>
+			<txt>고려대학교 정보대학 컴퓨터과</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>major</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>duty</tagName><tag>&gt;</tag>
+			<txt>SW 개발 관리자 / 프론트-앤드 프로그래머</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>duty</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>interest</tagName><tag>&gt;</tag>
+			<txt>프로그래밍 / 농구 / 춤</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>interest</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><txt>/</txt><tagName>div</tagName><tag>&gt;</tag><br/>
+			
+			<br/>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>div </tagName><attrName>id</attrName><txt>=</txt><attr>"contact"</attr><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>address</tagName><tag>&gt;</tag>
+			<txt>서울특별시 성동구 동호로100, 두산아파트 106동 601호</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>address</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>mail</tagName><tag>&gt;</tag>
+			<txt>dshyun0226@gmail.com</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>mail</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>cellphone</tagName><tag>&gt;</tag>
+			<txt>010 - 8966 - 1467</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>cellphone</tagName><tag>&gt;</tag><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><tagName>facebook</tagName><tag>&gt;</tag>
+			<txt>@dshyun0226</txt>
+			<tag>&lt;</tag><txt>/</txt><tagName>facebook</tagName><tag>&gt;</tag><br/>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>&lt;</tag><txt>/</txt><tagName>div</tagName><tag>&gt;</tag><br/>
+
+			<tag>&lt;</tag><txt>/</txt><tagName>body</tagName><tag>&gt;</tag><br/>
+			<tag>&lt;</tag><txt>/</txt><tagName>html</tagName><tag>&gt;</tag><br/>
+			<br/>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

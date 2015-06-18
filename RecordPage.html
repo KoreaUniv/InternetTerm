@@ -9,7 +9,7 @@
 			outer.style.top = (window.innerHeight/2 - 175)+'px';
 
 			var header = document.getElementById('header');
-			header.style.paddingLeft = (window.innerWidth/2 - 500)+'px';
+			header.style.paddingLeft = (window.innerWidth/2 - 440)+'px';
 
 			var title = document.getElementById('title');
 			title.style.left=(window.innerWidth/2-400)+'px';
@@ -23,15 +23,15 @@
 		}
 		#header{
 			cursor: default;
-			height:45px;
+			height:40px;
 			background-color:rgba(58,58,58,0.8);
 		}
 		.nav{
 			cursor: pointer;
-			line-height:45px;
+			line-height:40px;
 			text-align:center;
 			display:inline-block;
-			width : 140px;
+			width : 120px;
 			color:white;
 		}
 		.nav:hover{
@@ -66,7 +66,7 @@
 			border-top:3px solid #7D0E1B;
 		}
 
-		#outer #personal tr{
+		#outer #personal th{
 			font-size:13px;
 			background-color:#D6D6D6;
 			border:1px solid #C0C0C0;
@@ -98,8 +98,8 @@
 </head>
 <body style="background-image:url('MainBackground.png'); background-size:cover; background-repeat:no-repeat; background-color:#222222">
 	<div id="header">
-		<font size="2px">
-		<a href="MainPage.html"><div class="nav" id="logo">로고</div></a>
+		<font size="2px" style="line-height:40px;">
+		<a href="MainPage.html"><div class="nav" id="logo" style="background-image:url('KoreaUniv.gif'); background-size:contain; background-repeat:no-repeat; background-position:center;"> &nbsp;</div></a>
 		<a href="TeamPage.html"><div class="nav" id="introduce">팀 소개</div></a>
 		<a href="PlayerPage.html"><div class="nav" id="player">선수단</div></a>
 		<a href="CalendarPage.html"><div class="nav" id="gallery">일정/결과</div></a>

@@ -1,0 +1,286 @@
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		var now = 0, left = 19, right=1;
+		$(document).ready(function(){
+		$("#left").click(function(){
+			($(".post").eq((right+1)%20)).css({"top":"220px","left":"960px","display":"inline-block"});
+			($(".post").eq(left)).animate({
+				width:'0px',
+				height:'0px',
+				top:'220px',
+				left:'0px'
+			},300,function(){
+				($(".post").eq(left)).css("display","none");
+			});
+			($(".post").eq(now)).animate({
+				width:'280px',
+				height:'157.5px',
+				left:'0px',
+				top:'140px'
+			},300,function(){
+				($(".post").eq(now)).css("z-index","0");
+			});
+			($(".post").eq(right)).animate({
+				width:'560px',
+				height:'315px',
+				left:'200px',
+				top:'70px'
+			},300,function(){
+				($(".post").eq(right)).css("z-index","1");
+			});
+			($(".post").eq((right+1)%20)).animate({
+				width:'280px',
+				height:'157.5px',
+				left:'680px',
+				top:'140px'
+			},300,function(){
+				now = right;
+				right = (now+1)%20;
+				left = (now+19)%20;
+			});
+		});
+
+		$("#right").click(function(){
+			($(".post").eq((left+19)%20)).css({"top":"220px","left":"0px","display":"inline-block"});
+			($(".post").eq(right)).animate({
+				width:'0px',
+				height:'0px',
+				top:'220px',
+				left:'960px'
+			},300,function(){
+				($(".post").eq(right)).css("display","none");
+			});
+			($(".post").eq((left+19)%20)).animate({
+				width:'280px',
+				height:'157.5px',
+				left:'0px',
+				top:'140px'
+			},300);
+			($(".post").eq(left)).animate({
+				width:'560px',
+				height:'315px',
+				left:'200px',
+				top:'70px'
+			},300,function(){
+				($(".post").eq(left)).css("z-index","1");
+			});
+			($(".post").eq(now)).animate({
+				width:'280px',
+				height:'157.5px',
+				left:'680px',
+				top:'140px'
+			},300,function(){
+				($(".post").eq(now)).css("z-index","0");
+				now = left;
+				right = (now+1)%20;
+				left = (now+19)%20;
+			});
+		});
+		});
+	</script> 
+	<script type="text/javascript">
+		var now = 0, left = 19, right=1;
+		window.onload = function(){
+			var outer = document.getElementById('outer');
+			outer.style.left = (window.innerWidth/2 - 480)+'px';
+			outer.style.top = (window.innerHeight/2 - 230)+'px';
+
+			var header = document.getElementById('header');
+			header.style.paddingLeft = (window.innerWidth/2 - 440)+'px';
+
+			var title = document.getElementById('title');
+			title.style.left=(window.innerWidth/2-400)+'px';
+			title.style.top = (window.innerHeight/2 - 250)+'px';
+
+			var posts = document.getElementsByClassName('post');
+			for(var i=0;i<posts.length;i++){
+				var post = posts[i];
+				post.style.display='inline-block';
+				post.style.width='0px';
+				post.style.height='0px';
+				post.style.top='220px';
+				post.style.left='0px';
+			}
+			posts[posts.length-1].style.width = '280px';
+			posts[posts.length-1].style.height = '157.5px';
+			posts[posts.length-1].style.left = '0px';
+			posts[posts.length-1].style.top = '140px';
+			posts[0].style.width = '560px';
+			posts[0].style.height = '315px';
+			posts[0].style.left = '200px';
+			posts[0].style.top = '70px';
+			posts[0].style.zIndex = '1';
+			posts[1].style.width = '280px';
+			posts[1].style.height = '157.5px';
+			posts[1].style.left = '680px';
+			posts[1].style.top = '140px';
+		};
+		/*function change(div1, div2){
+			div1.style.width = div2.style.width;
+			div1.style.height = div2.style.height;
+			div1.style.display = div2.style.display;
+			div1.style.left = div2.style.left;
+			div1.style.top = div2.style.top;
+			div1.style.zIndex = div2.style.zIndex;
+		}
+
+
+		function leftMove(){
+			var posts = document.getElementsByClassName('post');
+			change(posts[(right+1)%20],posts[right]);
+			change(posts[right],posts[now]);
+			change(posts[now],posts[left]);
+			change(posts[left],posts[(left+19)%20]);
+			now = right;
+			right = (now+1)%20;
+			left = (now+19)%20;
+		}
+		function rightMove(){
+			var posts = document.getElementsByClassName('post');
+			change(posts[(left+19)%20],posts[left]);
+			change(posts[left],posts[now]);
+			change(posts[now],posts[right]);
+			change(posts[right],posts[(right+1)%20]);
+			now = left;
+			right = (now+1)%20;
+			left = (now+19)%20;
+		}*/
+	</script>
+	<style type="text/css">
+		body{
+			margin : 0px;
+			padding : 0px;
+		}
+		#header{
+			cursor:default;
+			height:40px;
+			background-color:rgba(58,58,58,0.8);
+		}
+		.nav{
+			cursor:pointer;
+			line-height:40px;
+			text-align:center;
+			display:inline-block;
+			width : 120px;
+			color:white;
+		}
+		.nav:hover{
+			color:#bbbbbb;
+		}
+		#title{
+			position:absolute;
+			height:50px;
+			width:800px;
+			border-bottom: 2px solid #7D0E1B;
+		}
+		#outer{
+			height : 470px;
+			width : 960px;
+			position:absolute;
+		}
+		#outer .post{
+			padding-top:10px;
+			padding-bottom:10px;
+			background-color:#7D0E1B;
+			box-shadow: 2px 2px 4px black;
+			width:560px;
+			height:315px;
+			background-size:contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			position:absolute;
+		}
+		#outer .post iframe{
+			width:100%; height:100%;
+		}
+
+		#outer .button{
+			cursor:pointer;
+			color:white;
+			text-align: center;
+			line-height:60px;
+			font-size:20px;
+			width:120px; height:60px;
+			position:absolute;
+			bottom:0px;
+		}
+	</style>
+</head>
+<body style="background-image:url('MainBackground.png'); background-size:cover;">
+	<div id="header">
+		<font size="2px" style="line-height:40px;">
+		<a href="MainPage.html"><div class="nav" id="logo" style="background-image:url('KoreaUniv.gif'); background-size:contain; background-repeat:no-repeat; background-position:center;"> &nbsp;</div></a>
+		<a href="TeamPage.html"><div class="nav" id="introduce">팀 소개</div></a>
+		<a href="PlayerPage.html"><div class="nav" id="player">선수단</div></a>
+		<a href="CalendarPage.html"><div class="nav" id="gallery">일정/결과</div></a>
+		<a href="GalleryPage.html"><div class="nav" id="event">갤러리</div></a>
+		<a href="RecordPage.html"><div class="nav" id="record">기록실</div></a>
+		<a href="DeveloperPage.html"><div class="nav" id="developer">도움말</div></a>
+		</font>
+	</div>
+	<div id="title">
+		<font id="font" size="6px" style="position:absolute; bottom:10px; color:white;">&nbsp;&nbsp;&nbsp;<i style="text-shadow: 2px 2px 4px #7D0E1B">VOD/이미지</i></font>
+	</div>
+	<div id="outer">
+		<div class="button" id="left" style="left:0px;">
+			&lt;&lt; PREV
+		</div>
+		<div class="button" id="right" style="right:0px;">
+			NEXT &gt;&gt;
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/pcBOMzCTkiA" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img1.jpeg');">
+		</div>
+		<div class="post" id="image" style="background-image:url('img2.jpg');">
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/lv906MfNsZA" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img3.jpg');">
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/2m9P_ObNlqg" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img4.jpg');">
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/kTZ6WfydJyw" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img5.jpg');">
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/MhO6H9qQ6PY" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/aPgAeU0RPe4" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img6.jpg');">
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/tfIm0VarFMM" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img7.jpg');">
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/3DqUGkZthZA" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/KqTd_4fl-T0" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img8.jpg');">
+		</div>
+		<div class="post" id="video">
+			<iframe src="https://www.youtube.com/embed/PdTrs7sjGcU" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="post" id="image" style="background-image:url('img9.jpg');">
+		</div>
+		<div class="post" id="image" style="background-image:url('img10.jpg');">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<html>
+<head>
+<meta charset="utf-8">
+	<script>
+		window.onload = function(){
+			var outer = document.getElementById('outer');
+			outer.style.left = (window.innerWidth/2 - 360)+'px';
+			outer.style.top = (window.innerHeight/2 - 175)+'px';
+
+			var header = document.getElementById('header');
+			header.style.paddingLeft = (window.innerWidth/2 - 440)+'px';
+
+			var title = document.getElementById('title');
+			title.style.left=(window.innerWidth/2-400)+'px';
+			title.style.top = (window.innerHeight/2 - 250)+'px';
+		};
+	</script>
+	<style type="text/css">
+		body{
+			margin : 0px;
+			padding : 0px;
+		}
+		#header{
+			cursor:default;
+			height:40px;
+			background-color:rgba(58,58,58,0.8);
+		}
+		.nav{
+			cursor:pointer;
+			line-height:40px;
+			text-align:center;
+			display:inline-block;
+			width : 120px;
+			color:white;
+		}
+
+		.nav:hover{
+			color:#bbbbbb;
+		}
+		#title{
+			position:absolute;
+			height:50px;
+			width:800px;
+			border-bottom: 2px solid #7D0E1B;
+		}
+		#outer{
+			height : 47	0px;
+			width : 720px;
+			position:absolute;
+		}
+
+		#outer table{
+			font-size: 13px;
+			border-collapse: collapse;
+			border-top:3px solid #7D0E1B;
+			border-bottom:3px solid #7D0E1B;
+		}
+
+		#outer table th{
+			background-color:#D6D6D6;
+			border:1px solid #C0C0C0;
+		}
+
+		#outer table tr td{
+			background-color:#E6E6E6;
+			border:1px solid #C0C0C0;
+		}
+		#outer table tr td a{
+			text-decoration: none;
+			color:#7D0E1B;
+		}
+
+		#outer table tr #kor{
+			color:white;
+			background-color:#7D0E1B;
+		}
+	</style>
+</head>
+<body style="background-image:url('MainBackground.png'); background-size:cover;">
+	<div id="header">
+		<font size="2px" style="line-height:40px;">
+		<a href="MainPage.html"><div class="nav" id="logo" style="background-image:url('KoreaUniv.gif'); background-size:contain; background-repeat:no-repeat; background-position:center;"> &nbsp;</div></a>
+		<a href="TeamPage.html"><div class="nav" id="introduce">팀 소개</div></a>
+		<a href="PlayerPage.html"><div class="nav" id="player">선수단</div></a>
+		<a href="CalendarPage.html"><div class="nav" id="gallery">일정/결과</div></a>
+		<a href="GalleryPage.html"><div class="nav" id="event">갤러리</div></a>
+		<a href="RecordPage.html"><div class="nav" id="record">기록실</div></a>
+		<a href="DeveloperPage.html"><div class="nav" id="developer">도움말</div></a>
+		</font>
+	</div>
+	<div id="title">
+		<font id="font" size="6px" style="position:absolute; bottom:10px; color:white;">&nbsp;&nbsp;&nbsp;<i style="text-shadow: 2px 2px 4px #7D0E1B">경기 일정 및 결과</i></font>
+	</div>
+	<div id="outer">
+		<font color="#7D0E1B" size="4px"><b style="text-shadow: 2px 2px 4px white">2015 대학농구리그 일정</b></font><br/><br/>
+		<table>
+		<colgroup>
+			<col width="18%">
+  			<col width="15%">
+  			<col width="8%">
+  			<col width="2%">
+  			<col width="8%">
+  			<col width="15%">
+  			<col width="*">
+  			<col width="12%">
+		</colgroup>
+		<tr height="30" style="background"><th>경기일시</th><th colspan="5">VS</th><th>구분</th><th>기록지</th></tr>
+		<tr align="center" height="30">
+  			<td>2015-03-16 14:00</td><td id="kor">고려대학교</td><td>86</td><td>:</td><td>76</td><td>연세대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528160053.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-03-23 17:00</td><td>동국대학교</td><td>62</td><td>:</td><td>81</td><td id="kor">고려대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528164339.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-03-30 17:00</td><td id="kor">고려대학교</td><td>96</td><td>:</td><td>66</td><td>한양대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528164603.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-04-06 17:00</td><td>명지대학교</td><td>75</td><td>:</td><td>97</td><td id="kor">고려대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528165537.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-04-08 14:00</td><td id="kor">고려대학교</td><td>86</td><td>:</td><td>76</td><td>중앙대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528170039.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-04-15 14:00</td><td>조선대학교</td><td>65</td><td>:</td><td>102</td><td id="kor">고려대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528170302.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-04-29 14:00</td><td id="kor">고려대학교</td><td>95</td><td>:</td><td>47</td><td>명지대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528170924.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-05-04 14:00</td><td id="kor">고려대학교</td><td>79</td><td>:</td><td>67</td><td>동국대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528171023.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-05-13 14:00</td><td id="kor">고려대학교</td><td>97</td><td>:</td><td>66</td><td>조선대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528171323.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-05-19 14:00</td><td>중앙대학교</td><td>63</td><td>:</td><td>81</td><td id="kor">고려대학교</td><td>예선</td><td><a href="http://www.kubf.or.kr/home/recfile_down.php?file=rec_20150528171712.pdf" download>&nbsp;기록지</a></td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-05-28 14:00</td><td>한양대학교</td><td>86</td><td>:</td><td>127</td><td id="kor">고려대학교</td><td>예선</td><td>&nbsp;기록지 없음</td></tr>
+  		<tr align="center" height="30">
+  			<td>2015-08-31 14:00</td><td>단국대학교</td><td>-</td><td>:</td><td>-</td><td>고려대학교</td><td>예선</td><td>&nbsp;Coming Up Soon</td></tr>
+		</table>
+	</div>
+</body>
+</html>
